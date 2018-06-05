@@ -1,26 +1,53 @@
 body{
-  background-color:#4ABDAC;
+  background-color:#00B276;
   margin:0;
   padding:0;
+  text-align: center;
 }
 
 header{
-  background-color: #fc4a1a;
+  background-color: #FF3200;
   color:white;
   text-align: center;
   width:100%;
   padding:0px;
 }
 
-#main{
-  background-color:#4ABDAC;
-  text-align: center;
+h1{
+  font-family: 'Patua One', cursive;
+  font-size:48px;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc,
+                 0 1px 0 #b9b9b9,
+                 0 2px 0 #aaa,
+                 0 3px 1px rgba(0,0,0,.1),
+                 0 0 3px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.2),
+                 0 2px 5px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+               }
+
+h2{
+  font-family: 'Work Sans', sans-serif;
+  color: #fff;
+  text-shadow: 0 2px 1px rgba(0,0,0,.1),
+                 0 0 2px rgba(0,0,0,.1),
+                 0 1px 2px rgba(0,0,0,.2),
+                 0 2px 3px rgba(0,0,0,.25),
+                 0 5px 5px rgba(0,0,0,.2),
+                 0 10px 10px rgba(0,0,0,.15);
 }
 
+/* fonts
+font-family: 'Passion One', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Patua One', cursive;
+font-family: 'Oswald', sans-serif; */
 
-
-button{
-  background-color: #F7B733;
+#main{
+  background-color:#00B276;
+  text-align: center;
 }
 
 .container{
@@ -36,4 +63,33 @@ header{
   color:white;
   font-family: sans-serif;
   padding:20px;
+}
+
+.js-search-form label{
+  font-family: 'Work Sans', sans-serif;
+  font-weight:bold;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 2px 1px rgba(0,0,0,.1),
+                 0 0 1px rgba(0,0,0,.1),
+                 0 1px 2px rgba(0,0,0,.25),
+                 0 3px 3px rgba(0,0,0,.2),
+                 0 5px 5px rgba(0,0,0,.15);
+}
+
+button{
+  padding:10px;
+  font-size:16px;
+  font-family: arial;
+  font-weight:bold;
+  font-size: 16px;
+  background-color:#B22300;
+  color:#fff;
+
+}
+
+#js-dropValue{
+padding:10px;
+font-size:16px;
+font-family: 'Work Sans', sans-serif;
 }
