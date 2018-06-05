@@ -15,7 +15,7 @@ header{
 
 h1{
   font-family: 'Patua One', cursive;
-  font-size:48px;
+  font-size:3em;
   color: #fff;
   text-shadow: 0 1px 0 #ccc,
                  0 1px 0 #b9b9b9,
@@ -55,20 +55,21 @@ font-family: 'Oswald', sans-serif; */
 }
 
 .titlerow{
-  color:white;
+  color:#fff;
   font-family: sans-serif;
 }
 
 header{
-  color:white;
+  color:#fff;
   font-family: sans-serif;
-  padding:20px;
+  padding:15px;
 }
 
 .js-search-form label{
   font-family: 'Work Sans', sans-serif;
   font-weight:bold;
-  font-size: 20px;
+  margin:5px;
+  font-size: em1;
   color: #fff;
   text-shadow: 0 2px 1px rgba(0,0,0,.1),
                  0 0 1px rgba(0,0,0,.1),
@@ -79,10 +80,10 @@ header{
 
 button{
   padding:10px;
-  font-size:16px;
+  font-size:em1;
   font-family: arial;
   font-weight:bold;
-  font-size: 16px;
+  font-size: em1;
   background-color:#B22300;
   color:#fff;
 
@@ -90,6 +91,6 @@ button{
 
 #js-dropValue{
 padding:10px;
-font-size:16px;
+font-size:em1;
 font-family: 'Work Sans', sans-serif;
 }
