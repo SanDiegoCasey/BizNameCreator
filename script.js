@@ -1,4 +1,4 @@
-const NAMEURL = "https://uzby.com/api.php"
+const NAMEURL = "https://cors-anywhere.herokuapp.com/https://uzby.com/api.php"
 const NAME = ""
 const NAMEIP = "107.201.225.22"
 const NAMECOMMAND = "namecheap.domains.check"
@@ -23,7 +23,7 @@ function renderResult(result){
 
 // render results to page
 function displayName(data){
-  console.log(data);
+  console.log(displayName());
   const results = renderResult(data);
   $('.nameResult').html(results);
 }
