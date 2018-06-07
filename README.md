@@ -2,7 +2,7 @@
 
 www.biznamecreator.com
 
-![alt text](http://www.biznamecreator/screen-shot.png)
+![screenshot](http://biznamecreator.com/screen-shot.png)
 
 Currently at biznamecreator.com 
 
