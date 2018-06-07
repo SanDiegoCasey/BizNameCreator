@@ -11,7 +11,7 @@ function getDataFromApi(value, callback){
 }
 
 function renderResult(result){
-  const OUTPUT = $('#domainResults');
+  const OUTPUT = $('#domainContainer');
   OUTPUT
       .prop('hidden', false);
   if (result.summary == "inactive"){
