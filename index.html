@@ -5,23 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Create a fresh new unique pronouncable business name for your new website and biz."/>
+  <meta name="description" content="Create a fresh new unique pronouncable business name for your new website and biz. This generator will create a business name for you at any length you like." />
   <title>Biz Name Creator</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" type="image/png" href="BIZ-favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Anton|Oswald|Work+Sans|Passion+One|Patua+One" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
   <div class="container">
     <header>
       <h1>Biz Name Creator!</h1>
     </header>
-    <section class="tagline"><h2>Get your new Biz name and domain here!</h2></section>
+    <section class="tagline">
+      <h2>Get your new Biz name and domain here!</h2></section>
     <section role="main" id="main">
       <div class="buttonrow">
         <form method="post" onSubmit="return get_new_name();" class="js-search-form">
-          <label for="js-dropValue">Number of Letters
+          <label for="js-dropValue">Choose the number of Letters
           <select name="js-dropValue" id="js-dropValue" >
             <option value="4">4</option>
             <option value="5">5</option>
@@ -40,9 +42,9 @@
       <div id="nameResult" aria-live="assertive" hidden>
       </div>
     </section>
-    <section id="domainContainer">
+    <section id="domainContainer" hidden>
       <div class="domainHeader">Domain Availability</div>
-      <div id="domainResults" aria-live="assertive" hidden>
+      <div id="domainResults" aria-live="assertive">
       </div>
     </section>
   </div>
@@ -52,4 +54,5 @@
   </script>
   <script src="script.js"></script>
 </body>
+
 </html>
