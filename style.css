@@ -1,96 +1,190 @@
-body{
-  background-color:#00B276;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedef;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-header{
-  background-color: #FF3200;
-  color:white;
-  text-align: center;
-  width:100%;
-  padding:0px;
+.container {
+  width: 100%;
 }
 
-h1{
+header {
+  background-color: #4c4947;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px 0px 5px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+h1 {
   font-family: 'Patua One', cursive;
-  font-size:3em;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 10px 10px rgba(0, 0, 0, .2),
+               0 20px 20px rgba(0, 0, 0, .15);
+}
+
+h2 {
+  font-family: 'Work Sans', sans-serif;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .2),
+              0 2px 2px rgba(0, 0, 0, .15);
+}
+
+#main {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  background-color: #ceccce;
+}
+
+section.tagline {
+  width: 100%;
+  margin: 0px;
+  padding: 2px 0px 2px 0px;
+  text-align: center;
+  background-color: #6ead3a;
+}
+
+.titlerow {
+  color: #fff;
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.status {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  margin: 5px;
+  font-size: em1;
+  color: #4c4947;
+}
+
+.domain {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  padding: 7px 0px 7px 7px;
+  font-size: em1;
+  color: #55862d;
+  border: 1px solid #6f6b68;
+  width: 100%;
+  text-align: left;
+  clear: both;
+  font-weight: bold;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.domainUnavail {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  padding: 7px 0px 7px 7px;
+  font-size: em1;
+  color: #878787;
+  border: 1px solid #6f6b68;
+  width: 100%;
+  /* float: left; */
+  text-align: left;
+  clear: both;
+  font-weight: lighter;
+}
+
+.js-search-form label {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  margin: 5px;
+  font-size: em1;
+  color: #4c4947;
+}
+
+button {
+  height: 38px;
+  background: linear-gradient(to bottom, #83bd52 0%, #6ead3a 100%);
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  border-bottom: 4px solid #55862d;
+  color: #fbfbfb;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+  font-size: 15px;
+  text-align: left;
+  text-indent: 5px;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+
+#domainContainer {
+  width: 100%;
+  padding: 10px 5px 10px 5px;
+}
+
+.domainHeader {
+  background-color: #4c4947;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  text-align: left;
+  padding: 1px 0px 1px 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+#domainResults {
+  padding-top: 5px 5px 10px 5px;
+  background-color: #e6e6e6;
+  max-width: 400px;
+  margin: auto;
+}
+
+.buyButton {
+  color: #fff;
+  background-color: #55862d;
+  height: 100%;
+  /* padding:7px; */
+  padding: 7px 7px 7px 7px;
+  float: right;
+  clear: both;
+  margin-top: -7px;
+}
+
+.sold {
+  color: #878787;
+  height: 100%;
+  /* padding:7px; */
+  padding: 7px 7px 7px 7px;
+  float: right;
+  clear: both;
+  margin-top: -7px;
+  font-weight: lighter;
+}
+
+#js-dropValue {
+  padding: 10px;
+  font-size: em1;
+  font-family: 'Work Sans', sans-serif;
+}
+
+#nameResult {
+  margin: 20px;
+  font-family: 'Patua One', cursive;
+  font-size: 3em;
   color: #fff;
   text-shadow: 0 1px 0 #ccc,
-                 0 1px 0 #b9b9b9,
-                 0 2px 0 #aaa,
-                 0 3px 1px rgba(0,0,0,.1),
-                 0 0 3px rgba(0,0,0,.1),
-                 0 1px 3px rgba(0,0,0,.2),
-                 0 2px 5px rgba(0,0,0,.25),
-                 0 10px 10px rgba(0,0,0,.2),
-                 0 20px 20px rgba(0,0,0,.15);
-               }
-
-h2{
-  font-family: 'Work Sans', sans-serif;
-  color: #fff;
-  text-shadow: 0 2px 1px rgba(0,0,0,.1),
-                 0 0 2px rgba(0,0,0,.1),
-                 0 1px 2px rgba(0,0,0,.2),
-                 0 2px 3px rgba(0,0,0,.25),
-                 0 5px 5px rgba(0,0,0,.2),
-                 0 10px 10px rgba(0,0,0,.15);
-}
-
-/* fonts
-font-family: 'Passion One', cursive;
-font-family: 'Anton', sans-serif;
-font-family: 'Patua One', cursive;
-font-family: 'Oswald', sans-serif; */
-
-#main{
-  background-color:#00B276;
-  text-align: center;
-}
-
-.container{
-  width:100%;
-}
-
-.titlerow{
-  color:#fff;
-  font-family: sans-serif;
-}
-
-header{
-  color:#fff;
-  font-family: sans-serif;
-  padding:15px;
-}
-
-.js-search-form label{
-  font-family: 'Work Sans', sans-serif;
-  font-weight:bold;
-  margin:5px;
-  font-size: em1;
-  color: #fff;
-  text-shadow: 0 2px 1px rgba(0,0,0,.1),
-                 0 0 1px rgba(0,0,0,.1),
-                 0 1px 2px rgba(0,0,0,.25),
-                 0 3px 3px rgba(0,0,0,.2),
-                 0 5px 5px rgba(0,0,0,.15);
-}
-
-button{
-  padding:10px;
-  font-size:em1;
-  font-family: arial;
-  font-weight:bold;
-  font-size: em1;
-  background-color:#B22300;
-  color:#fff;
-
-}
-
-#js-dropValue{
-padding:10px;
-font-size:em1;
-font-family: 'Work Sans', sans-serif;
+              0 1px 0 #b9b9b9,
+              0 2px 0 #aaa,
+              0 3px 1px rgba(0, 0, 0, .1), 
+              0 0 3px rgba(0, 0, 0, .1),
+              0 1px 3px rgba(0, 0, 0, .2),
+              0 2px 5px rgba(0, 0, 0, .25),
+              0 7px 7px rgba(0, 0, 0, .2),
+              0 10px 10px rgba(0, 0, 0, .15);
 }
