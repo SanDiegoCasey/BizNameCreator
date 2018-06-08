@@ -46,7 +46,7 @@ function get_new_name() {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-      // get value from drop down
+  // get value from drop down
   var
     minlen = document.getElementById('js-dropValue').value,
     maxlen = document.getElementById('js-dropValue').value,
