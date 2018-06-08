@@ -42,7 +42,24 @@ h1 {
 h2 {
   font-family: 'Work Sans', sans-serif;
   color: #fff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 2px rgba(0, 0, 0, .15);
+  /* text-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 2px rgba(0, 0, 0, .15); */
+  text-shadow:
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947,
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947,
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947,
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947,
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947,
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947,
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947,
+  1px 1px 2px #4c4947,
+  -1px -1px 2px #4c4947;
 }
 
 #main {

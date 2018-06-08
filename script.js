@@ -15,9 +15,9 @@ function renderResult(result) {
   const OUTPUT = $('#domainContainer');
   OUTPUT
     .prop('hidden', false);
-  // while (result.domain === ".net" || ".com" || ".biz" || ".org"){
-  //   return `<div class="domainUnavail">LOADING<span class="sold">LOADING</span></div>`;
-  // }
+  while (result.domain === ".net" || ".com" || ".biz" || ".org"){
+    return `<div class="domainUnavail">LOADING<span class="sold">LOADING</span></div>`;
+  }
   if (result.summary == "inactive") {
     return `<div class="domain">${result.domain}<span class="buyButton"><a href="https://www.namecheap.com/domains/registration/results.aspx?domain=${result.domain}" target="_blank">Buy it!</a></span></div>`;
   } else if (result.summary == "active") {
@@ -26,7 +26,6 @@ function renderResult(result) {
     return `<div class="domainUnavail">${result.domain}<span class="sold">Unavailable</span></div>`;
   }
 }
-
 // render results to page (will bring in renderResult code from above.)
 function displayDomainResults(data) {
   const RESULTS = data.status.map((item, index) => renderResult(item));
