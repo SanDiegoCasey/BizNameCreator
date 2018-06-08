@@ -5,7 +5,7 @@ const DOMAINRKEY = "4QEWXh45IWmshVb3XvKWKF09djZkp15M5YXjsn0HlZtIxTnaB8"
 function getDataFromApi(value, callback) {
   const QUERY = {
     "mashape-key": DOMAINRKEY,
-    domain: value + ".com," + value + ".net," + value + ".org," + value + ".biz"
+    domain: `${value}.com,${value}.net,${value}.org,${value}.biz`
   }
   $.getJSON(DOMAINRURLSTATUS, QUERY, callback);
 }
@@ -15,6 +15,9 @@ function renderResult(result) {
   const OUTPUT = $('#domainContainer');
   OUTPUT
     .prop('hidden', false);
+  // while (result.domain === ".net" || ".com" || ".biz" || ".org"){
+  //   return `<div class="domainUnavail">LOADING<span class="sold">LOADING</span></div>`;
+  // }
   if (result.summary == "inactive") {
     return `<div class="domain">${result.domain}<span class="buyButton"><a href="https://www.namecheap.com/domains/registration/results.aspx?domain=${result.domain}" target="_blank">Buy it!</a></span></div>`;
   } else if (result.summary == "active") {
@@ -30,7 +33,6 @@ function displayDomainResults(data) {
   $('#domainResults').html(RESULTS);
 }
 
-
 // script for random name generation
 function get_new_name() {
   const OUTPUT = $('#nameResult');
@@ -43,8 +45,9 @@ function get_new_name() {
   } else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
+
+      // get value from drop down
   var
-    // get value from drop down
     minlen = document.getElementById('js-dropValue').value,
     maxlen = document.getElementById('js-dropValue').value,
     param = 'min=' + minlen + '&max=' + maxlen;
