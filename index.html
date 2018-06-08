@@ -18,12 +18,14 @@
     <header role="banner">
       <h1>Biz Name Creator!</h1>
     </header>
-    <section class="tagline" role="region">
-      <h2>Get your new Biz name and domain here!</h2></section>
+    <section class="tagline" role="main">
+      <h2>Get your new Biz name and domain here!</h2>
+<p>Just pick the number of letters you would like in your new name and clickity click! Try as many times as you like!</p>
+    </section>
     <section id="main">
-      <div class="buttonrow">
-        <form method="post" onSubmit="return get_new_name();" class="js-search-form">
-          <label for="js-dropValue">Choose the number of Letters
+      <div class="buttonrow" role="form">
+        <form method="post" onSubmit="return get_new_name();" class="js-search-form" >
+          <label for="js-dropValue" >Choose the number of Letters
           <select name="js-dropValue" id="js-dropValue" >
             <option value="4">4</option>
             <option value="5">5</option>

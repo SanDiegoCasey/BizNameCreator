@@ -9,6 +9,16 @@ body {
   text-align: center;
 }
 
+p {
+  color: #fff;
+  text-align: center;
+  font-family: arial, sans-sans-serif;
+  font-size: em1;
+  max-width: 500px;
+  margin: auto;
+  padding-bottom: 5px;
+}
+
 .container {
   width: 100%;
 }
@@ -44,9 +54,9 @@ h2 {
 section.tagline {
   width: 100%;
   margin: 0px;
-  padding: 2px 0px 2px 0px;
+  padding: 2px 0px 10px 0px;
   text-align: center;
-  background-color: #6ead3a;
+  background-color: #629932;
 }
 
 .status {
@@ -93,7 +103,6 @@ a {
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
   margin: 5px;
-  font-size: em1;
   color: #4c4947;
 }
 
