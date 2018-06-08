@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
@@ -12,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Anton|Oswald|Work+Sans|Passion+One|Patua+One" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
   <div class="container">
     <header role="banner">
@@ -20,12 +18,12 @@
     </header>
     <section class="tagline" role="main">
       <h2>Get your new Biz name and domain here!</h2>
-<p>Just pick the number of letters you would like in your new name and clickity click! Try as many times as you like!</p>
+      <p>Just pick the number of letters you would like in your new name and clickity click! Try as many times as you like!</p>
     </section>
-    <section id="main">
+    <section id="formSection">
       <div class="buttonrow" role="form">
-        <form method="post" onSubmit="return get_new_name();" class="js-search-form" >
-          <label for="js-dropValue" >Choose the number of Letters
+        <form method="post" onSubmit="return getNewName();" class="js-search-form">
+          <label for="js-dropValue">Choose the number of Letters
           <select name="js-dropValue" id="js-dropValue" >
             <option value="4">4</option>
             <option value="5">5</option>
@@ -44,7 +42,7 @@
       <div id="nameResult" aria-live="assertive" hidden>
       </div>
     </section>
-    <section id="domainContainer" hidden>
+    <section id="domainContainer" role="main" hidden>
       <div class="domainHeader">Domain Availability</div>
       <div id="domainResults" aria-live="assertive">
       </div>
@@ -54,7 +52,7 @@
   <script>
     window.jQuery || document.write('<script src="jquery-3.3.1.min.js"><\/script>')
   </script>
+  <script type='text/javascript' src='config.js'></script>
   <script src="script.js"></script>
 </body>
-
 </html>
