@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Create a fresh new unique pronouncable business name for your new website and biz. This generator will create a business name for you at any length you like." />
+  <title>Biz Name Creator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="BIZ-favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Oswald|Work+Sans|Passion+One|Patua+One" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
+</head>
+<body>
+  <div class="container">
+    <header role="banner">
+      <h1>Biz Name Creator!</h1>
+    </header>
+    <div class="tagline" role="main">
+      <h2>Get your new Biz name and domain here!</h2>
+      <p>Just pick the number of letters you would like in your new name and clickity click! Try as many times as you like!</p>
+    </div>
+    <section id="formSection">
+      <div class="buttonrow" role="form">
+        <form method="post" onSubmit="return getNewName();" class="js-search-form">
+          <label for="js-dropValue">Choose the number of Letters
+          <select name="js-dropValue" id="js-dropValue" >
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          </label>
+          <button type="submit" class="btn">Create my name!</button>
+        </form>
+      </div>
+      <div id="nameResult" aria-live="assertive" hidden>
+      </div>
+    </section>
+    <section id="domainContainer" role="region" area-labelledby="Domain Results" hidden>
+      <div class="domainHeader">Domain Availability</div>
+      <div id="domainResults" aria-live="assertive">
+      </div>
+    </section>
+    <section id="tmContainer" role="region" area-labelledby="Trademark Results" hidden>
+      <div class="tmHeader">Trademark Information</div>
+      <div id="tmResults" aria-live="assertive">
+      </div>
+    </section>
+    <section id="googleContainer" role="region" area-labelledby="Google Results" hidden>
+      <div class="tmHeader">Trademark Information</div>
+      <div id="tmResults" aria-live="assertive">
+      </div>
+    </section>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="jquery-3.3.1.min.js"><\/script>')
+  </script>
+  <script type='text/javascript' src='config.js'></script>
+  <script src="script.js"></script>
+</body>
+</html>

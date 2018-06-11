@@ -44,10 +44,9 @@ function getNewName() {
   }
 
   // get value from drop downs
-  var
-    minlen = document.getElementById('js-dropValue').value,
-    maxlen = document.getElementById('js-dropValue').value,
-    param = 'min=' + minlen + '&max=' + maxlen;
+  var minlen = $('#js-dropValue').val();
+  var maxlen = $('#js-dropValue').val();
+  var param = `min=${minlen}&max=${maxlen}`;
   // Get data from name generator
   xmlhttp.open('GET', 'https://cors-anywhere.herokuapp.com/https://uzby.com/api.php?' + param, true);
   xmlhttp.onreadystatechange = function() {
