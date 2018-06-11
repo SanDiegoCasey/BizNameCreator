@@ -12,7 +12,8 @@ function getDataFromDomainrApi(value, callback) {
     "mashape-key": DOMAINRKEY,
     domain: `${value}.com,${value}.net,${value}.org,${value}.biz`
   }
-  $.getJSON(DOMAINRURLSTATUS, QUERY, callback);
+  $.getJSON(DOMAINRURLSTATUS, QUERY, callback)
+  .fail(function(){alert("Domain connection not working?")});
 }
 
 // create the code that will display for the domain availability
@@ -37,10 +38,13 @@ function displayDomainResults(data) {
 function watchSubmit() {
   $('.js-search-form').submit(event => {
     event.preventDefault();
+    //unhide name section
     $('#domainResults').html("");
     const NAMEOUTPUT = $('#nameResult');
     NAMEOUTPUT.prop('hidden', false);
+    // add loading image for latency
     $('#nameResult').html('<img src="ajax-loader.gif" alt="ajax-loader">');
+    // set variables for get request
     var minlen = $('#js-dropValue').val();
     var maxlen = $('#js-dropValue').val();
     var param = `min=${minlen}&max=${maxlen}`;
