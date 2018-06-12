@@ -23,8 +23,8 @@
       <p>Just pick the number of letters you would like in your new name and clickity click! Try as many times as you like!</p>
     </section>
     <div role="main">
-    <section id="formSection">
-      <div class="buttonrow" role="form">
+    <section id="formSection" role="region" aria-labelledby="region2">
+      <div class="buttonrow" role="form" id="region2">
         <form action="#" class="js-search-form">
           <label for="js-dropValue">Choose the number of Letters
           <select name="js-dropValue" id="js-dropValue" >
@@ -46,8 +46,8 @@
       </div>
     </section>
     </div>
-    <section id="domainContainer" hidden>
-      <div class="domainHeader">Domain Availability</div>
+    <section id="domainContainer" hidden aria-labelledby="region3">
+      <div class="domainHeader" id="region3">Domain Availability</div>
       <div id="domainResults" aria-live="assertive">
       </div>
     </section>
