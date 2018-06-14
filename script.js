@@ -79,35 +79,35 @@ function watchSubmit() {
   $('.js-search-form').submit(event => {
     event.preventDefault();
     //unhide name section
-    if($('select').val().length == 6){
+    if ($('select').val().length == 6) {
       alert.render("Please select the number of letters you would like your name to have.")
     } else {
-    $('#domainResults').html('');
-    $('#markerResults').html('');
-    // $('#markerContainer').html('');
-    const NAMEOUTPUT = $('#nameResult');
-    NAMEOUTPUT.prop('hidden', false);
-    // add loading image for latency
-    $('#nameResult').html('<img src="ajax-loader.gif" alt="ajax-loader">');
-    // set variables for get request
-    var minlen = $('select').val();
-    var maxlen = $('select').val();
-    var param = `min=${minlen}&max=${maxlen}`;
-    //Get random name result
-    $.ajax({
-      type: 'GET',
-      url: `${UZBYURL}${param}`,
-      success: function(result) {
-        const NAME = result;
-        $('#nameResult').html(NAME);
-        getDataFromDomainrApi(result, displayDomainResults);
-        getDataFromMarkerApi(result, displayMarkerResults);
-      },
-      error: function() {
-        alert('error loading names');
-      }
-    });
-  }
+      $('#domainResults').html('');
+      $('#markerResults').html('');
+      // $('#markerContainer').html('');
+      const NAMEOUTPUT = $('#nameResult');
+      NAMEOUTPUT.prop('hidden', false);
+      // add loading image for latency
+      $('#nameResult').html('<img src="ajax-loader.gif" alt="ajax-loader">');
+      // set variables for get request
+      var minlen = $('select').val();
+      var maxlen = $('select').val();
+      var param = `min=${minlen}&max=${maxlen}`;
+      //Get random name result
+      $.ajax({
+        type: 'GET',
+        url: `${UZBYURL}${param}`,
+        success: function(result) {
+          const NAME = result;
+          $('#nameResult').html(NAME);
+          getDataFromDomainrApi(result, displayDomainResults);
+          getDataFromMarkerApi(result, displayMarkerResults);
+        },
+        error: function() {
+          alert('error loading names');
+        }
+      });
+    }
   });
 }
 $(watchSubmit);
@@ -135,37 +135,38 @@ for (i = 0; i < x.length; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
     c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
+      /*when an item is clicked, update the original select box,
+      and the selected item:*/
+      var y, i, k, s, h;
+      s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+      h = this.parentNode.previousSibling;
+      for (i = 0; i < s.length; i++) {
+        if (s.options[i].innerHTML == this.innerHTML) {
+          s.selectedIndex = i;
+          h.innerHTML = this.innerHTML;
+          y = this.parentNode.getElementsByClassName("same-as-selected");
+          for (k = 0; k < y.length; k++) {
+            y[k].removeAttribute("class");
           }
+          this.setAttribute("class", "same-as-selected");
+          break;
         }
-        h.click();
+      }
+      h.click();
     });
     b.appendChild(c);
   }
   x[i].appendChild(b);
   a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
+    /*when the select box is clicked, close any other select boxes,
+    and open/close the current select box:*/
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
 }
+
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,
   except the current select box:*/
@@ -192,23 +193,23 @@ document.addEventListener("click", closeAllSelect);
 
 // custom alert -------------------------------------------------------------------------------------------------------
 
-function customAlert(){
-  this.render = function(dialog){
+function customAlert() {
+  this.render = function(dialog) {
     var winW = window.innerWidth;
     var winH = window.innerHeight;
     var errorOverlay = document.getElementById('errorOverlay');
     var errorBox = document.getElementById('errorBox');
     errorOverlay.style.display = "block";
     errorOverlay.style.height = `${winH}px`;
-    errorBox.style.left = (winW/2) - (300/2)+'px';
+    errorBox.style.left = (winW / 2) - (300 / 2) + 'px';
     errorBox.style.top = "80px";
     errorBox.style.display = "block";
     document.getElementById('errorBoxBody').innerHTML = dialog;
     document.getElementById('errorBoxFooter').innerHTML = '<button class="btn" onclick="alert.ok()">OK</button>';
   }
-  this.ok = function(){
-    document.getElementById('errorBox').style.display="none";
-    document.getElementById('errorOverlay').style.display="none";
+  this.ok = function() {
+    document.getElementById('errorBox').style.display = "none";
+    document.getElementById('errorOverlay').style.display = "none";
   }
 }
 var alert = new customAlert();
