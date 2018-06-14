@@ -191,7 +191,7 @@ then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
 
-// custom alert -------------------------------------------------------------------------------------------------------
+// custom alert --------------------------------------------------------------------------------------------------------
 
 function customAlert() {
   this.render = function(dialog) {
