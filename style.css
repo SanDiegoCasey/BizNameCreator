@@ -369,6 +369,34 @@ section.tagline {
   text-align: right;
 }
 
+/*----------------------------* footer styles * --------------------------- */
+
+footer {
+  font-size: 1em;
+  font-weight: normal;
+  max-width: 700px;
+  margin:auto;
+  color:#4c4947;
+}
+
+
+.copyright {
+  display: inline-block;
+}
+
+.contact {
+  display: inline-block;
+  float:right;
+}
+
+footer a:link {
+  color: #4c4947;
+}
+
+footer a:visited {
+  color:#4c4947;
+}
+
 /* ------------------- Media Queries -------------------------*/
 
 @media only screen and (max-width: 600px) {
