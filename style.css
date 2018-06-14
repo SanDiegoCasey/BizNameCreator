@@ -247,6 +247,10 @@ button {
   text-decoration: underline;
 }
 
+.btn {
+  padding:5px;
+  margin:5px;
+}
 
 .buyButton {
   color: #fff;
