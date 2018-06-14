@@ -60,6 +60,10 @@ section.tagline {
   background-color: #629932;
 }
 
+
+
+
+
 .status {
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
@@ -81,6 +85,18 @@ section.tagline {
   font-weight: bold;
 }
 
+.TM {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  padding: 7px 0px 20px 0px;
+  font-size: em1;
+  color: #55862d;
+  width: 100%;
+  text-align: left;
+  clear: both;
+  font-weight: bold;
+}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -92,6 +108,52 @@ a {
   padding: 7px 0px 7px 7px;
   font-size: em1;
   color: #878787;
+  border: 1px solid #6f6b68;
+  width: 100%;
+  /* float: left; */
+  text-align: left;
+  clear: both;
+  font-weight: lighter;
+}
+
+.TMregistered {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  padding: 7px 0px 7px 7px;
+  font-size: em1;
+  color: #494949;
+  /* border: 1px solid #6f6b68; */
+  width: 100%;
+  /* float: left; */
+  text-align: left;
+  clear: both;
+  font-weight: lighter;
+}
+
+.TMregisteredHead {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  padding: 7px 0px 5px 7px;
+  font-size: em1;
+  color: #494949;
+  /* border: 1px solid #6f6b68; */
+  width: 100%;
+  /* float: left; */
+  text-align: left;
+  clear: both;
+  font-weight: lighter;
+}
+
+.TMcontainer{
+  border: 1px solid #6f6b68;
+}
+
+.TMavail {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  padding: 7px 0px 7px 7px;
+  font-size: em1;
+  color: #494949;
   border: 1px solid #6f6b68;
   width: 100%;
   /* float: left; */
@@ -127,7 +189,12 @@ button {
 
 #domainContainer {
   width: 100%;
-  padding: 10px 5px 10px 5px;
+  padding: 10px 0px 10px 0px;
+}
+
+#markerContainer {
+  width: 100%;
+  padding: 10px 0px 10px 0px;
 }
 
 .domainHeader {
@@ -147,6 +214,40 @@ button {
   margin: auto;
 }
 
+#markerResults {
+  padding-top: 5px 5px 10px 5px;
+  background-color: #e6e6e6;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+
+
+.markerHeader {
+  background-color: #4c4947;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  text-align: left;
+  padding: 1px 0px 1px 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+#markerResults {
+  padding-top: 5px 5px 10px 5px;
+  background-color: #e6e6e6;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+.domainLink{
+  color:#340101;
+  text-decoration: underline;
+}
+
+
 .buyButton {
   color: #fff;
   background-color: #55862d;
@@ -156,6 +257,7 @@ button {
   float: right;
   clear: both;
   margin-top: -7px;
+  font-weight: bold;
 }
 
 .sold {
@@ -181,4 +283,26 @@ button {
   font-size: 3em;
   color: #fff;
   text-shadow: 0 1px 0 #ccc, 0 1px 0 #b9b9b9, 0 2px 0 #aaa, 0 3px 1px rgba(0, 0, 0, .1), 0 0 3px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .2), 0 2px 5px rgba(0, 0, 0, .25), 0 7px 7px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .15);
+}
+
+/* ------------------- Media Queries -------------------------*/
+
+@media only screen and (max-width: 600px) {
+  section.tagline {
+    width: 100%;
+    margin: 0px;
+    padding: 2px 10px 10px 10px;
+    text-align: center;
+    background-color: #629932;
+  }
+
+  #domainContainer {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+  }
+
+  #markerContainer {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+  }
 }

@@ -1,6 +1,11 @@
 const DOMAINRURLSTATUS = "https://domainr.p.mashape.com/v2/status"
 const UZBYURL = "https://cors-anywhere.herokuapp.com/https://uzby.com/api.php?"
-var DOMAINRKEY = config.DOMAINRKEY;
+const DOMAINRKEY = config.DOMAINRKEY;
+const MARKERUSER = config.MARKERUSPTOUSER;
+const MARKERPASS = config.MARKERUSPTOPASS;
+const MARKERURL = "https://cors-anywhere.herokuapp.com/https://www.markerapi.com/api/v1/trademark/search/"
+
+// sample marker https://cors-anywhere.herokuapp.com/https://www.markerapi.com/api/v1/trademark/search/rair/username/SanDiegoCasey/password/mqbJxHvP36
 
 // get data from domainr api
 function getDataFromDomainrApi(value, callback) {
@@ -16,15 +21,43 @@ function getDataFromDomainrApi(value, callback) {
   .fail(function(){alert("Domain connection not working?")});
 }
 
+// get data from Marker api
+function getDataFromMarkerApi(value) {
+  const OUTPUT = $('#markerContainer');
+  OUTPUT.prop('hidden', false);
+  $('#markerResults').html('<br><img src="ajax-loader-light.gif" alt="ajax-loader">');
+  // console.log(value);
+  $.ajax({
+      type:'GET',
+      url: `${MARKERURL}${value}/username/${MARKERUSER}/password/${MARKERPASS}`,
+      success: function(result){
+        $("#markerResults").html(renderMarkerResult(result, value));
+      },
+      error: function(){
+        $("#markerResults").html("No Results Found");
+      }
+    });
+}
+
 // create the code that will display for the domain availability
 function renderResult(result) {
 
   if (result.summary == "inactive") {
     return `<div class="domain">${result.domain}<span class="buyButton"><a href="https://www.namecheap.com/domains/registration/results.aspx?domain=${result.domain}" target="_blank">Buy it!</a></span></div>`;
   } else if (result.summary == "active") {
-    return `<div class="domainUnavail">${result.domain}<span class="sold">Unavailable</span></div>`;
+    return `<div class="domainUnavail"><a class="domainLink" href="http://www.${result.domain}" target="_blank">${result.domain}</a><span class="sold">Unavailable</span></div>`;
   } else {
-    return `<div class="domainUnavail">${result.domain}<span class="sold">Unavailable</span></div>`;
+    return `<div class="domainUnavail"><a class="domainLink" href="http://www.${result.domain}" target="_blank">${result.domain}</a><span class="sold">Unavailable</span></div>`;
+  }
+}
+
+// create the code that will display for the trademark availability
+function renderMarkerResult(result, name) {
+  if (result.count == "0") {
+    return `<div class="TMavail"><span class="TM">${name}</span> is available! <span class="buyButton"><a href="https://www.uspto.gov/trademarks-application-process/filing-online" target="_blank">Apply now!</a></span></div>`;
+} else {
+    return `<div class="TMcontainer"><div class="TMregisteredHead"><span class="TM">${result.trademarks[0].wordmark}</span> has been registered.</div>
+    <div class="TMregistered"><span class="TM">Description:</span> ${result.trademarks[0].description}</div></div>`;
   }
 }
 
@@ -34,12 +67,19 @@ function displayDomainResults(data) {
   $('#domainResults').html(RESULTS);
 }
 
+function displayMarkerResults(data){
+  const MKRRESULTS = renderMarkerResult(data);
+  $('#markerResults').html(MKRRESULTS);
+}
+
 //Wait for user to click "create my name" button
 function watchSubmit() {
   $('.js-search-form').submit(event => {
     event.preventDefault();
     //unhide name section
-    $('#domainResults').html("");
+    $('#domainResults').html('');
+    $('#markerResults').html('');
+    // $('#markerContainer').html('');
     const NAMEOUTPUT = $('#nameResult');
     NAMEOUTPUT.prop('hidden', false);
     // add loading image for latency
@@ -56,6 +96,7 @@ function watchSubmit() {
         const NAME = result;
         $('#nameResult').html(NAME);
         getDataFromDomainrApi(result, displayDomainResults);
+        getDataFromMarkerApi(result, displayMarkerResults);
       },
       error: function() {
         alert('error loading names');
