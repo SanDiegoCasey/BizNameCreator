@@ -372,16 +372,25 @@ section.tagline {
 /*----------------------------* footer styles * --------------------------- */
 
 footer {
-  font-size: 1em;
+  font-size: .8em;
   font-weight: normal;
-  max-width: 700px;
+  width: 100%;
   margin:auto;
   color:#4c4947;
+}
+
+.footerContainer{
+  width:100%;
+  max-width: 550px;
+  margin:auto;
+  padding-top:10px;
+  font-family: arial, sans-serif;
 }
 
 
 .copyright {
   display: inline-block;
+  float:left;
 }
 
 .contact {
@@ -391,6 +400,7 @@ footer {
 
 footer a:link {
   color: #4c4947;
+  text-decoration: underline;
 }
 
 footer a:visited {
@@ -414,5 +424,16 @@ footer a:visited {
   #markerContainer {
     width: 100%;
     padding: 10px 10px 10px 10px;
+  }
+
+  .copyright {
+    display: block;
+    margin-bottom:5px;
+    float:none;
+  }
+
+  .contact {
+    display: block;
+    float:none;
   }
 }
