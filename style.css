@@ -355,7 +355,6 @@ section.tagline {
   background: #55862d;
   font-size: 1em;
   padding: 10px 10px 0px 10px;
-  color: #fff;
   font-family: 'Work Sans', sans-serif;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 2px rgba(0, 0, 0, .15);
@@ -390,12 +389,14 @@ footer {
 
 .copyright {
   display: inline-block;
-  float: left;
+  text-align: left;
+  padding-right: 10px;
 }
 
 .contact {
   display: inline-block;
-  float: right;
+  text-align: right;
+  padding-left: 10px;
 }
 
 footer a:link {
@@ -428,10 +429,12 @@ footer a:visited {
   .copyright {
     display: block;
     margin-bottom: 5px;
-    float: none;
+    text-align: center;
+    padding: 0px;
   }
   .contact {
     display: block;
-    float: none;
+    text-align: center;
+    padding: 0px;
   }
 }
